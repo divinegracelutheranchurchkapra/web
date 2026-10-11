@@ -1,0 +1,738 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events · Divine Grace Lutheran Church</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ==========================================
+   DIVINE GRACE — EVENTS PAGE
+   CHAMPAGNE CREAM · FAITH NAVY · GOLD
+   ========================================== */
+
+.events-page {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 8% 15%, rgba(199,168,109,.13), transparent 32%),
+    radial-gradient(ellipse at 92% 82%, rgba(199,168,109,.12), transparent 30%),
+    linear-gradient(135deg, #F5EEDF, #FBF8F0 50%, #F5EEDF);
+}
+
+.events-page::before,
+.events-page::after {
+  content: "✧";
+  position: absolute;
+  z-index: -1;
+  color: rgba(167,131,69,.28);
+  font-size: 120px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.events-page::before {
+  top: 24px;
+  left: -32px;
+}
+
+.events-page::after {
+  right: -28px;
+  bottom: 20px;
+  transform: rotate(20deg);
+}
+
+/* ==========================================
+   NAVIGATION — GOLD ACCENTS + CHURCH LOGO
+   ========================================== */
+
+.site-header {
+  border-bottom: 1px solid rgba(199,168,109,.75);
+  box-shadow: 0 3px 15px rgba(16,42,67,.08);
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C7A86D;
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+}
+
+.brand-name strong {
+  letter-spacing: .1em;
+}
+
+.navlinks a {
+  transition: color .25s ease, background .25s ease;
+}
+
+.navlinks a:hover,
+.navlinks a.active {
+  color: #B99554;
+}
+
+.navlinks a.active {
+  text-shadow: 0 0 12px rgba(199,168,109,.18);
+}
+
+/* ==========================================
+   PAGE HERO
+   ========================================== */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(199,168,109,.20), transparent 35%),
+    radial-gradient(ellipse at 85% 50%, rgba(199,168,109,.17), transparent 35%),
+    linear-gradient(135deg, #071B2D, #102A43 55%, #17324B);
+  border-top: 1px solid rgba(199,168,109,.38);
+  border-bottom: 2px solid #B99554;
+  box-shadow:
+    inset 0 -5px 0 rgba(199,168,109,.10),
+    0 5px 20px rgba(16,42,67,.12);
+}
+
+.page-hero::before,
+.page-hero::after {
+  content: "✧";
+  position: absolute;
+  top: 50%;
+  color: rgba(199,168,109,.70);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 82px;
+  line-height: 1;
+  pointer-events: none;
+  transform: translateY(-50%);
+  text-shadow: 0 0 20px rgba(199,168,109,.20);
+}
+
+.page-hero::before {
+  left: max(5%, calc((100% - 1100px) / 2));
+}
+
+.page-hero::after {
+  right: max(5%, calc((100% - 1100px) / 2));
+}
+
+.page-hero h1 {
+  position: relative;
+  z-index: 1;
+  color: #FFF8E9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: .035em;
+  text-shadow: 0 2px 18px rgba(199,168,109,.28);
+}
+
+.page-hero h1::after {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B99554 15%,
+    #F5E3B9 50%,
+    #B99554 85%,
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(199,168,109,.28);
+}
+
+.page-hero p {
+  position: relative;
+  z-index: 1;
+  color: #E8DDC7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: .045em;
+  line-height: 1.9;
+}
+
+@media (max-width: 540px) {
+  .page-hero::before {
+    left: 8px;
+    font-size: 42px;
+  }
+
+  .page-hero::after {
+    right: 8px;
+    font-size: 42px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(27px, 7vw, 36px);
+  }
+
+  .page-hero p {
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 13px;
+  }
+}
+
+/* ==========================================
+   SECTION HEADING
+   ========================================== */
+
+.events-heading {
+  position: relative;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 38px;
+  padding-bottom: 22px;
+}
+
+.events-heading::after {
+  content: "◆";
+  display: block;
+  width: 150px;
+  margin: 21px auto 0;
+  padding-top: 11px;
+  border-top: 1px solid rgba(167,131,69,.65);
+  color: #B99554;
+  font-size: 9px;
+  line-height: 1;
+  text-shadow: 0 0 9px rgba(199,168,109,.25);
+}
+
+.events-heading .eyebrow {
+  color: #98713A;
+  letter-spacing: .24em;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.events-heading h2 {
+  color: #102A43;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 400;
+  margin: 12px 0;
+  text-shadow: 0 1px 0 rgba(199,168,109,.12);
+}
+
+.events-heading h2 span {
+  color: #A78345;
+  font-style: normal;
+}
+
+.events-heading p {
+  color: #716858;
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0 auto;
+  max-width: 570px;
+}
+
+/* ==========================================
+   EVENT CARDS
+   ========================================== */
+
+.events-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 25px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.event-tile {
+  --event-gold: #C7A86D;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 390px;
+  padding: 25px 23px 27px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(199,168,109,.15), transparent 42%),
+    radial-gradient(ellipse at 0% 100%, rgba(199,168,109,.08), transparent 35%),
+    linear-gradient(155deg, #FFFCF5 0%, #FDF8ED 100%);
+
+  border: 1px solid rgba(167,131,69,.72);
+  border-radius: 5px;
+
+  box-shadow:
+    0 8px 25px rgba(16,42,67,.07),
+    0 0 12px rgba(199,168,109,.07),
+    inset 0 0 0 3px rgba(199,168,109,.09);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+}
+
+.event-tile::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(199,168,109,.45);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.event-tile::after {
+  content: "✧";
+  position: absolute;
+  right: 13px;
+  bottom: 7px;
+  color: rgba(167,131,69,.48);
+  font-size: 24px;
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(199,168,109,.18);
+}
+
+.event-tile:hover {
+  transform: translateY(-5px);
+  border-color: #B99554;
+  box-shadow:
+    0 13px 34px rgba(16,42,67,.10),
+    0 0 23px rgba(199,168,109,.22),
+    inset 0 0 0 3px rgba(199,168,109,.16);
+}
+
+/* Latest announcement card */
+
+.event-tile.is-latest {
+  border: 1px solid #B99554;
+  box-shadow:
+    0 8px 28px rgba(167,131,69,.16),
+    0 0 20px rgba(199,168,109,.18),
+    inset 0 0 0 3px rgba(199,168,109,.17);
+}
+
+.event-tile.is-latest::before {
+  border-color: rgba(185,149,84,.62);
+}
+
+.event-tile.is-latest:hover {
+  box-shadow:
+    0 14px 36px rgba(167,131,69,.21),
+    0 0 28px rgba(199,168,109,.27),
+    inset 0 0 0 3px rgba(199,168,109,.22);
+}
+
+.event-tile.is-latest .event-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B99554 18%,
+    #F0DDB2 50%,
+    #B99554 82%,
+    transparent
+  );
+}
+
+/* Event category */
+
+.event-tile-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 0;
+}
+
+.event-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 2px 0 0;
+  color: #98713A;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.event-category::before {
+  content: "✦";
+  color: #B99554;
+  font-size: 11px;
+  text-shadow: 0 0 7px rgba(199,168,109,.35);
+}
+
+.event-tile.is-latest .event-category {
+  color: #8C672E;
+}
+
+/* Event title */
+
+.event-title {
+  color: #102A43;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(21px, 2vw, 26px);
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 13px 0 15px;
+  letter-spacing: -.01em;
+}
+
+/* Gold divider */
+
+.event-divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+  margin: 0 0 20px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B99554 16%,
+    #F0DDB2 50%,
+    #B99554 84%,
+    transparent
+  );
+  box-shadow: 0 0 7px rgba(199,168,109,.20);
+}
+
+.event-divider::after {
+  content: "◆";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 7px;
+  color: #B99554;
+  font-size: 8px;
+  line-height: 1;
+  background: #FFFCF5;
+  transform: translate(-50%, -50%);
+}
+
+/* Event description */
+
+.event-description {
+  color: #716858;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.95;
+  margin: 0 0 22px;
+}
+
+.event-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 17px;
+  border-top: 1px solid rgba(185,149,84,.50);
+  color: #98713A;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: .025em;
+}
+
+.event-meta-icon {
+  flex: 0 0 auto;
+  color: #B99554;
+  font-size: 15px;
+  line-height: 1.4;
+  text-shadow: 0 0 8px rgba(199,168,109,.25);
+}
+
+/* Gentle gold glimmer */
+
+.event-tile.is-latest .event-glimmer {
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255,255,255,.40),
+    rgba(231,207,153,.20),
+    transparent
+  );
+  transform: skewX(-18deg);
+  pointer-events: none;
+  animation: eventGlimmer 8s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes eventGlimmer {
+  0%, 72%, 100% { left: -80%; }
+  88% { left: 145%; }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer {
+  border-top: 2px solid #B99554;
+  box-shadow: 0 -4px 18px rgba(16,42,67,.06);
+}
+
+footer h3 {
+  text-shadow: 0 0 12px rgba(199,168,109,.10);
+}
+
+footer a {
+  transition: color .25s ease;
+}
+
+footer a:hover {
+  color: #C7A86D;
+}
+
+.footer-bottom {
+  border-top-color: rgba(199,168,109,.35);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .event-tile,
+  .event-tile.is-latest .event-glimmer {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 800px) {
+  .events-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .event-tile {
+    min-height: 360px;
+    padding: 22px 19px 24px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 540px) {
+  .events-heading {
+    margin-bottom: 26px;
+  }
+
+  .events-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    max-width: 390px;
+  }
+
+  .event-tile {
+    min-height: 320px;
+    padding: 25px 23px 26px;
+  }
+
+  .event-tile-top {
+    min-height: 0;
+  }
+
+  .event-title {
+    font-size: 25px;
+  }
+
+  .event-description {
+    font-size: 13px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+
+    <!-- CHURCH LOGO -->
+    <a class="brand" href="index.html">
+      <div class="brand-mark">
+        <img src="assets/churchlogo.jpg"
+             alt="Divine Grace Lutheran Church Logo">
+      </div>
+
+      <div class="brand-name">
+        <strong>DIVINE GRACE</strong>
+        <span>LUTHERAN CHURCH</span>
+      </div>
+    </a>
+
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="worship.html">Worship</a>
+      <a href="events.html" class="active">Events</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="prayer.html">Prayer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <h1>Events &amp; Community</h1>
+    <p>Stay connected with the life of our church family.</p>
+  </section>
+
+  <section class="section events-page">
+    <div class="section-inner">
+
+      <div class="events-heading">
+        <div class="eyebrow">WORSHIP · FELLOWSHIP · COMMUNITY</div>
+        <h2>Upcoming <span>Services &amp; Gatherings</span></h2>
+        <p>Special worship services and parish gatherings will appear here.</p>
+      </div>
+
+      <div class="events-cards">
+
+        <!-- LATEST ANNOUNCEMENT -->
+        <article class="event-tile is-latest">
+          <div class="event-glimmer"></div>
+
+          <div class="event-tile-top">
+            <div class="event-category">Latest Announcement</div>
+          </div>
+
+          <h3 class="event-title">Updates</h3>
+          <div class="event-divider"></div>
+
+          <p class="event-description">
+            Special announcements and the latest news from our church family will appear here.
+          </p>
+
+          <div class="event-meta">
+            <span class="event-meta-icon" aria-hidden="true">✦</span>
+            <span>New announcements will be highlighted here.</span>
+          </div>
+        </article>
+
+        <!-- FELLOWSHIP -->
+        <article class="event-tile">
+          <div class="event-tile-top">
+            <div class="event-category">Community</div>
+          </div>
+
+          <h3 class="event-title">Fellowship</h3>
+          <div class="event-divider"></div>
+
+          <p class="event-description">
+            Gatherings that bring generations together in faith and friendship.
+          </p>
+
+          <div class="event-meta">
+            <span class="event-meta-icon" aria-hidden="true">✦</span>
+            <span>Church family · Faith · Friendship</span>
+          </div>
+        </article>
+
+        <!-- WORSHIP SERVICE -->
+        <article class="event-tile">
+          <div class="event-tile-top">
+            <div class="event-category">Worship &amp; Prayer</div>
+          </div>
+
+          <h3 class="event-title">Worship Service</h3>
+          <div class="event-divider"></div>
+
+          <p class="event-description">
+            Special worship services and parish gatherings will appear here.
+          </p>
+
+          <div class="event-meta">
+            <span class="event-meta-icon" aria-hidden="true">✦</span>
+            <span>Come together in worship and faith.</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <h3>Divine Grace Lutheran Church</h3>
+      <p>
+        Andhra Evangelical Lutheran Church<br>
+        Kapra Parish · Bhavani Nagar<br>
+        ECIL (Post), Hyderabad – 500 062
+      </p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <p>
+        <a href="index.html">Home</a><br>
+        <a href="worship.html">Worship</a><br>
+        <a href="events.html">Events</a>
+      </p>
+    </div>
+
+    <div>
+      <h3>Connect</h3>
+      <p>
+        <a href="prayer.html">Prayer Requests</a><br>
+        <a href="contact.html">Contact Us</a>
+      </p>
+    </div>
+
+  </div>
+
+   <div class="copyright">
+        © 2026 Divine Grace Lutheran Church · Bhavani Nagar, Hyderabad · Built with grace
+      </div>
+   <div class="designer-credit-right">
+  Website Design by <a>Rishika Daisy</a>
+</div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

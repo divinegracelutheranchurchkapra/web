@@ -1,0 +1,1169 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Sermons · Divine Grace Lutheran Church</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* ==========================================
+   DIVINE GRACE — SERMONS PAGE
+   FAITH NAVY · CHAMPAGNE CREAM · GOLD
+   ========================================== */
+
+:root {
+  --sermon-navy: #102A43;
+  --sermon-deep: #071B2D;
+  --sermon-gold: #C7A86D;
+  --sermon-gold-dark: #A78345;
+  --sermon-cream: #F5EEDF;
+  --sermon-white: #FFFCF5;
+  --sermon-text: #716858;
+}
+
+/* Page background */
+
+.sermons-page {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 8% 18%,
+      rgba(199,168,109,.14),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 95% 75%,
+      rgba(199,168,109,.12),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #F5EEDF,
+      #FBF8F0 52%,
+      #F5EEDF
+    );
+}
+
+/* Subtle geometric background decorations */
+
+.sermons-page::before,
+.sermons-page::after {
+  content: "✧";
+  position: absolute;
+  z-index: -1;
+  color: rgba(167,131,69,.25);
+  font-size: 125px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.sermons-page::before {
+  top: 35px;
+  left: -35px;
+}
+
+.sermons-page::after {
+  right: -28px;
+  bottom: 25px;
+}
+
+/* ==========================================
+   NAVIGATION ACCENTS
+   ========================================== */
+
+.site-header {
+  border-bottom: 1px solid rgba(199,168,109,.75);
+  box-shadow: 0 3px 15px rgba(16,42,67,.08);
+}
+
+.brand-mark {
+  color: var(--sermon-gold);
+  text-shadow: 0 0 12px rgba(199,168,109,.25);
+}
+
+.navlinks a[href="sermons.html"] {
+  color: var(--sermon-gold-dark);
+}
+
+/* ==========================================
+   PAGE HERO
+   ========================================== */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 50%,
+      rgba(199,168,109,.19),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgba(199,168,109,.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #071B2D,
+      #102A43 55%,
+      #17324B
+    );
+
+  border-top: 1px solid rgba(199,168,109,.35);
+  border-bottom: 2px solid #B99554;
+
+  box-shadow:
+    inset 0 -5px 0 rgba(199,168,109,.10),
+    0 5px 20px rgba(16,42,67,.12);
+}
+
+.page-hero::before,
+.page-hero::after {
+  content: "✧";
+  position: absolute;
+  top: 50%;
+  color: rgba(199,168,109,.68);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 78px;
+  line-height: 1;
+  pointer-events: none;
+  transform: translateY(-50%);
+  text-shadow: 0 0 18px rgba(199,168,109,.22);
+}
+
+.page-hero::before {
+  left: max(5%, calc((100% - 1100px) / 2));
+}
+
+.page-hero::after {
+  right: max(5%, calc((100% - 1100px) / 2));
+}
+
+.page-hero h1 {
+  position: relative;
+  z-index: 1;
+  color: #FFF8E9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: .035em;
+  text-shadow: 0 2px 18px rgba(199,168,109,.25);
+}
+
+.page-hero h1::after {
+  content: "";
+  display: block;
+  width: 105px;
+  height: 2px;
+  margin: 16px auto 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B99554 15%,
+    #F5E3B9 50%,
+    #B99554 85%,
+    transparent
+  );
+
+  box-shadow: 0 0 10px rgba(199,168,109,.25);
+}
+
+.page-hero p {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+
+  color: #E8DDC7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: .035em;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   SECTION INTRODUCTION
+   ========================================== */
+
+.sermons-intro {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.sermons-eyebrow {
+  color: var(--sermon-gold-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .24em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.sermons-intro h2 {
+  margin: 13px 0 14px;
+  color: var(--sermon-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sermons-intro h2 span {
+  color: var(--sermon-gold-dark);
+}
+
+.sermons-intro p {
+  max-width: 580px;
+  margin: 0 auto;
+  color: var(--sermon-text);
+  font-size: 14px;
+  line-height: 1.95;
+}
+
+.sermons-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 23px auto 0;
+  color: var(--sermon-gold-dark);
+  font-size: 10px;
+}
+
+.sermons-ornament::before,
+.sermons-ornament::after {
+  content: "";
+  width: 65px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #B99554
+  );
+}
+
+.sermons-ornament::after {
+  transform: rotate(180deg);
+}
+
+/* ==========================================
+   FEATURED YOUTUBE SECTION
+   ========================================== */
+
+.youtube-feature {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(240px, .85fr);
+  align-items: center;
+  gap: 32px;
+
+  max-width: 1060px;
+  margin: 0 auto 46px;
+  padding: 36px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(199,168,109,.15),
+      transparent 42%
+    ),
+    linear-gradient(
+      135deg,
+      #FFFCF5,
+      #F8F0DF
+    );
+
+  border: 1px solid rgba(167,131,69,.75);
+  border-radius: 5px;
+
+  box-shadow:
+    0 12px 34px rgba(16,42,67,.08),
+    0 0 20px rgba(199,168,109,.09),
+    inset 0 0 0 4px rgba(199,168,109,.08);
+}
+
+/* Inner gold frame */
+
+.youtube-feature::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(199,168,109,.35);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.youtube-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.youtube-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 13px;
+
+  color: var(--sermon-gold-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.youtube-label::before {
+  content: "✦";
+  color: var(--sermon-gold);
+  font-size: 13px;
+}
+
+.youtube-copy h3 {
+  margin: 0 0 15px;
+  color: var(--sermon-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.youtube-copy h3 span {
+  color: var(--sermon-gold-dark);
+}
+
+.youtube-copy p {
+  margin: 0 0 23px;
+  color: var(--sermon-text);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.youtube-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 13px 20px;
+
+  background: linear-gradient(
+    135deg,
+    #102A43,
+    #071B2D
+  );
+
+  border: 1px solid #B99554;
+  border-radius: 3px;
+
+  color: #FFF8E9;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  box-shadow: 0 5px 14px rgba(16,42,67,.12);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.youtube-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(
+    135deg,
+    #173B59,
+    #102A43
+  );
+  box-shadow:
+    0 7px 18px rgba(16,42,67,.15),
+    0 0 13px rgba(199,168,109,.20);
+}
+
+.youtube-button .play-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #E6C989;
+  font-size: 17px;
+}
+
+.youtube-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 5px;
+
+  color: var(--sermon-gold-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: color .2s ease;
+}
+
+.youtube-secondary:hover {
+  color: var(--sermon-navy);
+}
+
+/* Decorative YouTube panel */
+
+.youtube-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 245px;
+  padding: 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 45%,
+      rgba(199,168,109,.16),
+      transparent 58%
+    ),
+    linear-gradient(
+      145deg,
+      #071B2D,
+      #102A43 58%,
+      #17324B
+    );
+
+  border: 1px solid #B99554;
+  border-radius: 4px;
+
+  box-shadow:
+    inset 0 0 0 4px rgba(199,168,109,.08),
+    0 8px 22px rgba(16,42,67,.10);
+}
+
+.youtube-art::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid rgba(199,168,109,.52);
+  pointer-events: none;
+}
+
+.youtube-art::after {
+  content: "✧";
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  color: rgba(199,168,109,.7);
+  font-size: 26px;
+}
+
+.youtube-art-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.youtube-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 74px;
+  height: 54px;
+  margin: 0 auto 19px;
+
+  background: #B99554;
+  border: 1px solid #F0DDB2;
+  border-radius: 13px;
+
+  color: #071B2D;
+  font-size: 26px;
+
+  box-shadow:
+    0 0 22px rgba(199,168,109,.23),
+    inset 0 0 0 2px rgba(255,255,255,.12);
+}
+
+.youtube-art-title {
+  color: #FFF8E9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.youtube-art-subtitle {
+  margin-top: 8px;
+  color: #D8C69E;
+  font-size: 10px;
+  letter-spacing: .18em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   THREE SERMON RESOURCE CARDS
+   ========================================== */
+
+.sermon-links-heading {
+  margin: 0 auto 25px;
+  text-align: center;
+}
+
+.sermon-links-heading h3 {
+  margin: 0;
+  color: var(--sermon-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3vw, 31px);
+  font-weight: 400;
+}
+
+.sermon-links-heading p {
+  margin: 10px auto 0;
+  color: var(--sermon-text);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.sermon-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.sermon-link-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 255px;
+  padding: 25px 23px;
+
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(199,168,109,.13),
+      transparent 44%
+    ),
+    linear-gradient(
+      155deg,
+      #FFFCF5,
+      #FDF8ED
+    );
+
+  border: 1px solid rgba(167,131,69,.65);
+  border-radius: 4px;
+
+  box-shadow:
+    0 7px 22px rgba(16,42,67,.055),
+    inset 0 0 0 3px rgba(199,168,109,.07);
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.sermon-link-card::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(199,168,109,.30);
+  pointer-events: none;
+}
+
+.sermon-link-card:hover {
+  transform: translateY(-4px);
+  border-color: #B99554;
+  box-shadow:
+    0 12px 28px rgba(16,42,67,.09),
+    0 0 18px rgba(199,168,109,.16),
+    inset 0 0 0 3px rgba(199,168,109,.12);
+}
+
+.sermon-card-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 20px;
+
+  background: linear-gradient(
+    145deg,
+    #17324B,
+    #071B2D
+  );
+
+  border: 1px solid #B99554;
+  border-radius: 50%;
+
+  color: #E8CE94;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+
+  box-shadow: 0 0 12px rgba(199,168,109,.12);
+}
+
+.sermon-link-card h4 {
+  margin: 0 0 12px;
+  color: var(--sermon-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.sermon-link-card p {
+  margin: 0 0 22px;
+  color: var(--sermon-text);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.sermon-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+
+  color: var(--sermon-gold-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.sermon-card-link::after {
+  content: "→";
+  font-size: 16px;
+  transition: transform .2s ease;
+}
+
+.sermon-link-card:hover .sermon-card-link::after {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+   SCRIPTURE CLOSING
+   ========================================== */
+
+.sermons-verse {
+  max-width: 760px;
+  margin: 48px auto 0;
+  padding: 23px 20px 0;
+  border-top: 1px solid rgba(167,131,69,.45);
+  text-align: center;
+}
+
+.sermons-verse-mark {
+  color: var(--sermon-gold-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+}
+
+.sermons-verse blockquote {
+  margin: 10px 0;
+  color: var(--sermon-navy);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 2.4vw, 22px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.sermons-verse cite {
+  color: var(--sermon-gold-dark);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+/* ==========================================
+   FOOTER ACCENTS
+   ========================================== */
+
+footer {
+  border-top: 2px solid #B99554;
+  box-shadow: 0 -4px 18px rgba(16,42,67,.06);
+}
+
+footer a {
+  transition: color .25s ease;
+}
+
+footer a:hover {
+  color: #C7A86D;
+}
+
+.footer-bottom {
+  border-top-color: rgba(199,168,109,.35);
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ==========================================
+   TABLET
+   ========================================== */
+
+@media (max-width: 800px) {
+  .youtube-feature {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 28px;
+  }
+
+  .youtube-art {
+    min-height: 205px;
+  }
+
+  .sermon-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .sermon-link-card:last-child {
+    grid-column: 1 / -1;
+    min-height: 220px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 540px) {
+  .page-hero::before {
+    left: 8px;
+    font-size: 40px;
+  }
+
+  .page-hero::after {
+    right: 8px;
+    font-size: 40px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(27px, 7vw, 36px);
+  }
+
+  .page-hero p {
+    font-size: 13px;
+  }
+
+  .sermons-intro {
+    margin-bottom: 28px;
+  }
+
+  .sermons-intro p {
+    font-size: 13px;
+  }
+
+  .youtube-feature {
+    gap: 23px;
+    margin-bottom: 35px;
+    padding: 24px 19px;
+  }
+
+  .youtube-copy h3 {
+    font-size: 29px;
+  }
+
+  .youtube-copy p {
+    font-size: 12px;
+  }
+
+  .youtube-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .youtube-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .youtube-secondary {
+    align-self: center;
+  }
+
+  .youtube-art {
+    min-height: 185px;
+  }
+
+  .sermon-links-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    max-width: 390px;
+  }
+
+  .sermon-link-card,
+  .sermon-link-card:last-child {
+    grid-column: auto;
+    min-height: 225px;
+    padding: 24px 22px;
+  }
+
+  .sermons-verse {
+    margin-top: 35px;
+    padding-top: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+
+      <a class="brand" href="index.html">
+      <div class="brand-mark">
+        <img src="assets/churchlogo.jpg" alt="Divine Grace Lutheran Church Logo">
+      </div>
+
+      <div class="brand-name">
+        <strong>DIVINE GRACE</strong>
+        <span>LUTHERAN CHURCH</span>
+      </div>
+    </a>
+
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="worship.html">Worship</a>
+      <a href="events.html">Events</a>
+      <a href="sermons.html" class="active">Sermons</a>
+      <a href="prayer.html">Prayer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="page-hero">
+    <h1>The Message Continues</h1>
+
+    <p>
+      Missed a service? Stay connected through recorded sermons,
+      messages and livestreams from our church family.
+    </p>
+  </section>
+
+  <!-- SERMONS SECTION -->
+
+  <section class="section sermons-page">
+    <div class="section-inner">
+
+      <!-- INTRODUCTION -->
+
+      <div class="sermons-intro">
+
+        <div class="sermons-eyebrow">
+          WATCH · LISTEN · GROW IN FAITH
+        </div>
+
+        <h2>
+          Latest <span>Messages</span>
+        </h2>
+
+        <p>
+          Wherever you are, take a moment to pause, reflect on God's Word
+          and remain connected with the life of Divine Grace Lutheran Church.
+        </p>
+
+        <div class="sermons-ornament" aria-hidden="true">✦</div>
+
+      </div>
+
+      <!-- FEATURED YOUTUBE CHANNEL -->
+
+      <section class="youtube-feature" aria-label="Our YouTube channel">
+
+        <div class="youtube-copy">
+
+          <div class="youtube-label">
+            Our YouTube Channel
+          </div>
+
+          <h3>
+            Faith that speaks.<br>
+            <span>Grace that stays.</span>
+          </h3>
+
+          <p>
+            Visit the Divine Grace Lutheran Church YouTube channel
+            to discover available sermons, church messages and
+            livestreams. Continue worship and reflection wherever
+            your week takes you.
+          </p>
+
+          <div class="youtube-actions">
+
+            <a
+              class="youtube-button"
+              href="https://www.youtube.com/@DivineGraceLutheranChurch-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="play-icon" aria-hidden="true">▶</span>
+              Visit Our YouTube Channel
+            </a>
+
+            <a
+              class="youtube-secondary"
+              href="https://www.youtube.com/@DivineGraceLutheranChurch-1/videos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Browse Videos →
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Decorative panel linking to YouTube -->
+
+        <a
+          class="youtube-art"
+          href="https://www.youtube.com/@DivineGraceLutheranChurch-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit Divine Grace Lutheran Church on YouTube"
+          style="text-decoration:none"
+        >
+
+          <div class="youtube-art-inner">
+
+            <div class="youtube-play" aria-hidden="true">▶</div>
+
+            <div class="youtube-art-title">
+              Divine Grace
+            </div>
+
+            <div class="youtube-art-subtitle">
+              Lutheran Church · Watch & Listen
+            </div>
+
+          </div>
+
+        </a>
+
+      </section>
+
+      <!-- YOUTUBE DESTINATIONS -->
+
+      <div class="sermon-links-heading">
+
+        <h3>Explore Our Messages</h3>
+
+        <p>
+          Choose a section below to continue watching on YouTube.
+        </p>
+
+      </div>
+
+      <div class="sermon-links-grid">
+
+        <!-- SERMON VIDEOS -->
+
+        <a
+          class="sermon-link-card"
+          href="https://www.youtube.com/@DivineGraceLutheranChurch-1/videos"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="sermon-card-symbol" aria-hidden="true">▶</div>
+
+          <h4>Sermon Videos</h4>
+
+          <p>
+            Revisit recorded messages and spend time reflecting
+            on Scripture and the Word of God.
+          </p>
+
+          <span class="sermon-card-link">
+            Watch Sermons
+          </span>
+
+        </a>
+
+        <!-- LIVESTREAMS -->
+
+        <a
+          class="sermon-link-card"
+          href="https://www.youtube.com/@DivineGraceLutheranChurch-1/streams"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="sermon-card-symbol" aria-hidden="true">◉</div>
+
+          <h4>Livestreams</h4>
+
+          <p>
+            Visit our channel's livestream section for available
+            live broadcasts and past streamed services.
+          </p>
+
+          <span class="sermon-card-link">
+            View Streams
+          </span>
+
+        </a>
+
+        <!-- CHURCH CHANNEL -->
+
+        <a
+          class="sermon-link-card"
+          href="https://www.youtube.com/@DivineGraceLutheranChurch-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="sermon-card-symbol" aria-hidden="true">✝</div>
+
+          <h4>Our Channel</h4>
+
+          <p>
+            Explore the Divine Grace Lutheran Church channel
+            for available videos and church updates.
+          </p>
+
+          <span class="sermon-card-link">
+            Visit Channel
+          </span>
+
+        </a>
+
+      </div>
+
+      <!-- SCRIPTURE -->
+
+      <div class="sermons-verse">
+
+        <div class="sermons-verse-mark" aria-hidden="true">✦</div>
+
+        <blockquote>
+          “So then faith cometh by hearing, and hearing by the word of God.”
+        </blockquote>
+
+        <cite>Romans 10:17 · KJV</cite>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+      <h3>Divine Grace Lutheran Church</h3>
+
+      <p>
+        Andhra Evangelical Lutheran Church<br>
+        Kapra Parish · Bhavani Nagar<br>
+        ECIL (Post), Hyderabad – 500 062
+      </p>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+
+      <p>
+        <a href="index.html">Home</a><br>
+        <a href="worship.html">Worship</a><br>
+        <a href="events.html">Events</a>
+      </p>
+    </div>
+
+    <div>
+      <h3>Connect</h3>
+
+      <p>
+        <a href="prayer.html">Prayer Requests</a><br>
+        <a href="contact.html">Contact Us</a><br>
+        <a
+          href="https://www.youtube.com/@DivineGraceLutheranChurch-1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube Channel</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+        © 2026 Divine Grace Lutheran Church · Bhavani Nagar, Hyderabad · Built with grace
+      </div>
+
+
+   <div class="designer-credit-right">
+  Website Design by <a>Rishika Daisy</a>
+</div>
+</footer>
+
+<script src="site.js"></script>
+
+</body>
+</html>

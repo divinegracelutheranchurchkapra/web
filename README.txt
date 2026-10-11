@@ -1,0 +1,1 @@
+Custom multi-page Divine Grace Lutheran Church website. Open index.html to preview. Each top menu item opens a separate page. Uploaded church photo is used in the hero and welcome section. Replace/add official contact, event, sermon and livestream information before publishing.

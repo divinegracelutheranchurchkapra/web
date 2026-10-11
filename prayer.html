@@ -1,0 +1,1002 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Prayer · Divine Grace Lutheran Church</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* =========================================
+           PRAYER PAGE — PAGE-SPECIFIC DESIGN
+           Existing header, footer and background
+           styling are preserved.
+        ========================================= */
+
+        .prayer-page {
+            --prayer-navy: #102A43;
+            --prayer-navy-deep: #071B2D;
+            --prayer-gold: #C7A86D;
+            --prayer-gold-dark: #98733C;
+            --prayer-cream: #F5EEDF;
+            --prayer-white: #FBF8F0;
+            --prayer-muted: #68717A;
+
+            color: var(--prayer-navy);
+        }
+
+        .prayer-page *,
+        .prayer-page *::before,
+        .prayer-page *::after {
+            box-sizing: border-box;
+        }
+
+        /* Hero */
+
+        .prayer-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 76px 24px 68px;
+            text-align: center;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(199, 168, 109, 0.13),
+                    transparent 65%
+                ),
+                var(--prayer-navy-deep);
+            border-bottom: 1px solid rgba(199, 168, 109, 0.55);
+        }
+
+        .prayer-hero::before,
+        .prayer-hero::after {
+            content: "✧";
+            position: absolute;
+            color: var(--prayer-gold);
+            font-size: 35px;
+            opacity: 0.55;
+            pointer-events: none;
+        }
+
+        .prayer-hero::before {
+            top: 35px;
+            left: 9%;
+        }
+
+        .prayer-hero::after {
+            right: 9%;
+            bottom: 32px;
+        }
+
+        .prayer-ornament {
+            margin: 0 0 20px;
+            color: var(--prayer-gold);
+            font-size: 12px;
+            letter-spacing: 5px;
+        }
+
+        .prayer-hero h1 {
+            max-width: 850px;
+            margin: 0 auto 20px;
+            color: var(--prayer-cream);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(36px, 5.5vw, 62px);
+            font-weight: 400;
+            line-height: 1.16;
+            letter-spacing: -0.8px;
+            text-wrap: balance;
+        }
+
+        .prayer-hero .prayer-subtitle {
+            max-width: 680px;
+            margin: 0 auto 25px;
+            color: #E8DFCE;
+            font-size: 16px;
+            line-height: 1.95;
+        }
+
+        .prayer-hero .prayer-verse {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 19px 12px 0;
+            border-top: 1px solid rgba(199, 168, 109, 0.42);
+            color: var(--prayer-gold);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(17px, 2.4vw, 21px);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .prayer-hero .prayer-reference {
+            display: block;
+            margin-top: 8px;
+            color: #E8DFCE;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Main section */
+
+        .prayer-section {
+            padding: 75px 22px 88px;
+            background:
+                radial-gradient(
+                    ellipse at 50% 0%,
+                    rgba(199, 168, 109, 0.10),
+                    transparent 48%
+                ),
+                var(--prayer-cream);
+        }
+
+        .prayer-container {
+            width: 100%;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .prayer-intro {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .prayer-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 17px;
+            color: var(--prayer-gold-dark);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            line-height: 1.8;
+            text-transform: uppercase;
+        }
+
+        .prayer-eyebrow::before,
+        .prayer-eyebrow::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 1px;
+            background: var(--prayer-gold);
+        }
+
+        .prayer-intro h2 {
+            margin: 0 0 14px;
+            color: var(--prayer-navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(29px, 4vw, 40px);
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .prayer-intro p {
+            max-width: 590px;
+            margin: 0 auto;
+            color: #5D6269;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* Form card */
+
+        .prayer-card {
+            position: relative;
+            padding: clamp(24px, 5vw, 46px);
+            overflow: hidden;
+            background: var(--prayer-white);
+            border: 1px solid rgba(152, 115, 60, 0.42);
+            border-radius: 5px;
+            box-shadow: 0 16px 48px rgba(16, 42, 67, 0.07);
+        }
+
+        .prayer-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                var(--prayer-gold),
+                #E8D6AD,
+                var(--prayer-gold),
+                transparent
+            );
+        }
+
+        .prayer-card-heading {
+            margin-bottom: 31px;
+            text-align: center;
+        }
+
+        .prayer-card-heading .small-cross {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--prayer-gold-dark);
+            font-size: 22px;
+        }
+
+        .prayer-card-heading h3 {
+            margin: 0 0 10px;
+            color: var(--prayer-navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(25px, 3.6vw, 32px);
+            font-weight: 400;
+            line-height: 1.35;
+        }
+
+        .prayer-card-heading p {
+            max-width: 510px;
+            margin: 0 auto;
+            color: var(--prayer-muted);
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .prayer-divider {
+            height: 1px;
+            margin: 27px 0;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(199, 168, 109, 0.75),
+                transparent
+            );
+        }
+
+        /* Labels and fields */
+
+        .prayer-form .field {
+            margin-bottom: 24px;
+        }
+
+        .prayer-form label,
+        .prayer-form legend {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--prayer-navy);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .prayer-form .optional {
+            color: #777D82;
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .prayer-form input[type="text"],
+        .prayer-form input[type="tel"],
+        .prayer-form textarea,
+        .prayer-form select {
+            display: block;
+            width: 100%;
+            min-height: 49px;
+            padding: 13px 15px;
+            color: var(--prayer-navy);
+            background: #FFFFFF;
+            border: 1px solid #D9D0BE;
+            border-radius: 3px;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            line-height: 1.65;
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .prayer-form textarea {
+            min-height: 155px;
+            resize: vertical;
+        }
+
+        .prayer-form input::placeholder,
+        .prayer-form textarea::placeholder {
+            color: #97958F;
+            opacity: 1;
+        }
+
+        .prayer-form input:focus,
+        .prayer-form textarea:focus,
+        .prayer-form select:focus {
+            border-color: var(--prayer-gold-dark);
+            box-shadow: 0 0 0 3px rgba(199, 168, 109, 0.16);
+        }
+
+        .prayer-form .field-help {
+            margin: 8px 0 0;
+            color: #777D82;
+            font-size: 12px;
+            line-height: 1.75;
+        }
+
+        /* Prayer intention choices */
+
+        .prayer-form fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .prayer-form legend {
+            margin-bottom: 16px;
+        }
+
+        .prayer-options {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 11px;
+        }
+
+        .prayer-option {
+            display: flex !important;
+            align-items: flex-start;
+            gap: 11px;
+            min-height: 57px;
+            margin: 0 !important;
+            padding: 14px 13px;
+            background: #FFFFFF;
+            border: 1px solid #DED5C4;
+            border-radius: 3px;
+            cursor: pointer;
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .prayer-option:hover {
+            background: #FBF4E6;
+            border-color: var(--prayer-gold);
+        }
+
+        .prayer-option:has(input:checked) {
+            background: #F6EBD5;
+            border-color: var(--prayer-gold-dark);
+        }
+
+        .prayer-option input[type="radio"] {
+            flex: 0 0 auto;
+            width: 15px;
+            height: 15px;
+            margin: 3px 0 0;
+            accent-color: var(--prayer-navy);
+            cursor: pointer;
+        }
+
+        .prayer-option span {
+            color: #354657;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        /* Consent */
+
+        .prayer-consent {
+            display: flex !important;
+            align-items: flex-start;
+            gap: 11px;
+            margin: 0 0 25px !important;
+            color: #5D6269 !important;
+            font-size: 12px !important;
+            font-weight: 400 !important;
+            line-height: 1.8 !important;
+            cursor: pointer;
+        }
+
+        .prayer-consent input {
+            flex: 0 0 auto;
+            width: 16px;
+            height: 16px;
+            margin: 3px 0 0;
+            accent-color: var(--prayer-navy);
+        }
+
+        /* Submit button */
+
+        .prayer-submit {
+            display: block;
+            width: 100%;
+            min-height: 54px;
+            padding: 15px 22px;
+            color: var(--prayer-cream);
+            background: var(--prayer-navy);
+            border: 1px solid var(--prayer-gold);
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .prayer-submit:hover {
+            color: #FFFFFF;
+            background: #173B59;
+            box-shadow: 0 5px 20px rgba(16, 42, 67, 0.13);
+        }
+
+        .prayer-submit:focus-visible {
+            outline: 3px solid var(--prayer-gold);
+            outline-offset: 4px;
+        }
+
+        .prayer-privacy-note {
+            margin: 17px 0 0;
+            color: #777D82;
+            font-size: 11px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Closing verse */
+
+        .prayer-closing {
+            max-width: 650px;
+            margin: 43px auto 0;
+            text-align: center;
+        }
+
+        .prayer-closing .closing-label {
+            margin-bottom: 13px;
+            color: var(--prayer-gold-dark);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .prayer-closing blockquote {
+            margin: 0;
+            color: var(--prayer-navy);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(19px, 3vw, 24px);
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .prayer-closing .closing-reference {
+            margin-top: 11px;
+            color: var(--prayer-gold-dark);
+            font-size: 11px;
+            letter-spacing: 2px;
+        }
+
+        .prayer-closing .closing-ornament {
+            margin-top: 20px;
+            color: var(--prayer-gold);
+            font-size: 19px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+            .prayer-hero {
+                padding: 57px 22px 49px;
+            }
+
+            .prayer-hero::before {
+                top: 19px;
+                left: 6%;
+                font-size: 25px;
+            }
+
+            .prayer-hero::after {
+                right: 6%;
+                bottom: 18px;
+                font-size: 25px;
+            }
+
+            .prayer-hero h1 {
+                font-size: clamp(34px, 9vw, 45px);
+            }
+
+            .prayer-hero .prayer-subtitle {
+                font-size: 14px;
+            }
+
+            .prayer-section {
+                padding: 53px 15px 62px;
+            }
+
+            .prayer-intro {
+                margin-bottom: 27px;
+            }
+
+            .prayer-card {
+                padding: 25px 18px 27px;
+            }
+
+            .prayer-options {
+                grid-template-columns: 1fr;
+                gap: 9px;
+            }
+
+            .prayer-option {
+                min-height: 51px;
+                padding: 13px 12px;
+            }
+
+            .prayer-form .field {
+                margin-bottom: 21px;
+            }
+
+            .prayer-closing {
+                margin-top: 35px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .prayer-page *,
+            .prayer-page *::before,
+            .prayer-page *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EXISTING HEADER — PRESERVED -->
+
+    <header class="site-header">
+        <nav class="nav">
+
+              <a class="brand" href="index.html">
+                <div class="brand-mark">
+                <img src="assets/churchlogo.jpg" alt="Divine Grace Lutheran Church Logo">
+                </div>
+
+                <div class="brand-name">
+                    <strong>DIVINE GRACE</strong>
+                    <span>LUTHERAN CHURCH</span>
+                </div>
+            </a>
+
+            <div class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="worship.html">Worship</a>
+                <a href="events.html">Events</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="prayer.html">Prayer</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main class="prayer-page">
+
+        <!-- PRAYER HERO -->
+
+        <section class="prayer-hero">
+
+            <div class="prayer-ornament">
+                ✧ &nbsp; A MOMENT IN HIS PRESENCE &nbsp; ✧
+            </div>
+
+            <h1>Let Us Pray With You</h1>
+
+            <p class="prayer-subtitle">
+                Whether you have something to celebrate, a heart full
+                of gratitude, a hope you're holding onto, or something
+                you'd like us to bring before God, we would be honoured
+                to pray with you.
+            </p>
+
+            <p class="prayer-verse">
+                “Give thanks to the Lord, for he is good;
+                his love endures forever.”
+                <span class="prayer-reference">Psalm 107:1</span>
+            </p>
+
+        </section>
+
+
+        <!-- PRAYER REQUEST FORM -->
+
+        <section class="prayer-section">
+
+            <div class="prayer-container">
+
+                <div class="prayer-intro">
+
+                    <div class="prayer-eyebrow">
+                        Your Prayer, Our Privilege
+                    </div>
+
+                    <h2>What would you like us to pray for?</h2>
+
+                    <p>
+                        Share what's on your heart, in your own words.
+                        Whether it's a prayer of thanksgiving, a special
+                        blessing, or something you are hoping for,
+                        every reason for prayer is welcome.
+                    </p>
+
+                </div>
+
+
+                <div class="prayer-card">
+
+                    <div class="prayer-card-heading">
+
+                        <span class="small-cross">✝</span>
+
+                        <h3>A Prayer From Your Heart</h3>
+
+                        <p>
+                            Take your time. Share only what you feel
+                            comfortable sharing. We would be glad to
+                            remember your request in prayer.
+                        </p>
+
+                    </div>
+
+
+                    <!--
+                      EMAIL SETUP:
+                      Replace YOUR-CHURCH-EMAIL@example.com below
+                      with the real church inbox before publishing.
+
+                      FormSubmit will email submissions to that address.
+                      Its first-time email verification may be required.
+                    -->
+
+                    <form
+                        class="prayer-form"
+                        action="https://formsubmit.co/divinegracelutheranchurchkapra@gmail.com"
+                        method="POST"
+                    >
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New Prayer Request — Divine Grace Lutheran Church"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_template"
+                            value="table"
+                        >
+
+                        <!-- Honeypot field for basic spam protection -->
+                        <input
+                            type="text"
+                            name="_honey"
+                            tabindex="-1"
+                            autocomplete="off"
+                            aria-hidden="true"
+                            style="position:absolute;left:-9999px;width:1px;height:1px;"
+                        >
+
+
+                        <fieldset class="field">
+
+                            <legend>
+                                I'd like prayer for…
+                            </legend>
+
+                            <div class="prayer-options">
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Thanking God for His goodness and mercies"
+                                        required
+                                    >
+                                    <span>
+                                        Thanking God for His goodness
+                                        and mercies
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="An answered prayer or a special blessing"
+                                    >
+                                    <span>
+                                        An answered prayer or
+                                        a special blessing
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Guidance, wisdom, or a decision"
+                                    >
+                                    <span>
+                                        Guidance, wisdom,
+                                        or a decision
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Family, relationships, or loved ones"
+                                    >
+                                    <span>
+                                        Family, relationships,
+                                        or loved ones
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Health, healing, and strength"
+                                    >
+                                    <span>
+                                        Health, healing,
+                                        and strength
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Peace, comfort, or encouragement"
+                                    >
+                                    <span>
+                                        Peace, comfort,
+                                        or encouragement
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Spiritual growth and a closer walk with God"
+                                    >
+                                    <span>
+                                        Spiritual growth and a
+                                        closer walk with God
+                                    </span>
+                                </label>
+
+                                <label class="prayer-option">
+                                    <input
+                                        type="radio"
+                                        name="Prayer Intention"
+                                        value="Something else or a personal prayer"
+                                    >
+                                    <span>
+                                        Something else or
+                                        a personal prayer
+                                    </span>
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <div class="prayer-divider"></div>
+
+
+                        <div class="field">
+
+                            <label for="prayer-name">
+                                Your name
+                                <span class="optional">(Optional)</span>
+                            </label>
+
+                            <input
+                                id="prayer-name"
+                                type="text"
+                                name="Name"
+                                placeholder="What may we call you?"
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="prayer-mobile">
+                                Mobile number
+                                <span class="optional">(Optional)</span>
+                            </label>
+
+                            <input
+                                id="prayer-mobile"
+                                type="tel"
+                                name="Mobile Number"
+                                placeholder="Only if you'd like us to contact you"
+                                autocomplete="tel"
+                                inputmode="tel"
+                            >
+
+                            <p class="field-help">
+                                You can leave this blank if you would
+                                prefer not to be contacted.
+                            </p>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label for="prayer-message">
+                                Your prayer request
+                                <span aria-hidden="true">*</span>
+                            </label>
+
+                            <textarea
+                                id="prayer-message"
+                                name="Prayer Request"
+                                placeholder="Dear church family, I would appreciate prayer for…"
+                                required
+                            ></textarea>
+
+                            <p class="field-help">
+                                Share as much or as little as you wish.
+                                Please avoid including sensitive details
+                                that are not necessary for your request.
+                            </p>
+
+                        </div>
+
+
+                        <div class="prayer-divider"></div>
+
+
+                        <label class="prayer-consent">
+
+                            <input
+                                type="checkbox"
+                                name="Prayer Team Consent"
+                                value="Yes — I consent"
+                                required
+                            >
+
+                            <span>
+                                I consent to my prayer request being
+                                shared with the designated church
+                                prayer team for prayer.
+                            </span>
+
+                        </label>
+
+
+                        <button
+                            class="prayer-submit"
+                            type="submit"
+                        >
+                            Send My Prayer Request &nbsp; ✧
+                        </button>
+
+
+                        <p class="prayer-privacy-note">
+                            Your request will be sent to the church
+                            inbox configured for this form. Please share
+                            only information you are comfortable
+                            entrusting to the church prayer team.
+                        </p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- CLOSING VERSE -->
+
+                <div class="prayer-closing">
+
+                    <div class="closing-label">
+                        A WORD OF ENCOURAGEMENT
+                    </div>
+
+                    <blockquote>
+                        “Pray continually, give thanks in all circumstances.”
+                    </blockquote>
+
+                    <div class="closing-reference">
+                        1 Thessalonians 5:17–18
+                    </div>
+
+                    <div class="closing-ornament">✧</div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- EXISTING FOOTER — PRESERVED -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Divine Grace Lutheran Church</h3>
+
+                <p>
+                    Andhra Evangelical Lutheran Church
+                    <br>
+                    Kapra Parish · Bhavani Nagar
+                    <br>
+                    ECIL (Post), Hyderabad – 500 062
+                </p>
+            </div>
+
+
+            <div>
+                <h3>Explore</h3>
+
+                <p>
+                    <a href="index.html">Home</a>
+                    <br>
+                    <a href="worship.html">Worship</a>
+                    <br>
+                    <a href="events.html">Events</a>
+                </p>
+            </div>
+
+
+            <div>
+                <h3>Connect</h3>
+
+                <p>
+                    <a href="prayer.html">Prayer Requests</a>
+                    <br>
+                    <a href="contact.html">Contact Us</a>
+                </p>
+            </div>
+
+        </div>
+
+
+         <div class="copyright">
+        © 2026 Divine Grace Lutheran Church · Bhavani Nagar, Hyderabad · Built with grace
+      </div>
+
+         <div class="designer-credit-right">
+  Website Design by <a>Rishika Daisy</a>
+</div>
+    </footer>
+
+
+    <script src="site.js"></script>
+
+</body>
+</html>

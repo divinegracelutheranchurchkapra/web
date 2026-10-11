@@ -1,0 +1,853 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact · Divine Grace Lutheran Church</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ========================================
+       CONTACT PAGE — NAVY, GOLD & CHAMPAGNE
+    ======================================== */
+
+    .contact-page {
+      --contact-navy: #102A43;
+      --contact-navy-dark: #071B2D;
+      --contact-gold: #C7A86D;
+      --contact-gold-dark: #98733C;
+      --contact-cream: #FBF8F0;
+      --contact-text: #414C56;
+
+      background: var(--contact-cream);
+      color: var(--contact-text);
+    }
+
+    .contact-page,
+    .contact-page * {
+      box-sizing: border-box;
+    }
+
+    .contact-page .contact-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 65px 24px 58px;
+      text-align: center;
+      color: var(--contact-cream);
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(199, 168, 109, .15),
+          transparent 58%
+        ),
+        linear-gradient(
+          135deg,
+          #071B2D,
+          #102A43 60%,
+          #173650
+        );
+      border-bottom: 2px solid var(--contact-gold);
+    }
+
+    .contact-page .contact-hero::before,
+    .contact-page .contact-hero::after {
+      position: absolute;
+      content: "✦";
+      color: rgba(199, 168, 109, .65);
+      font-size: 23px;
+      pointer-events: none;
+    }
+
+    .contact-page .contact-hero::before {
+      top: 24px;
+      left: 9%;
+    }
+
+    .contact-page .contact-hero::after {
+      right: 9%;
+      bottom: 22px;
+      font-size: 17px;
+    }
+
+    .contact-page .contact-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .contact-page .gold-eyebrow {
+      display: block;
+      margin-bottom: 12px;
+      color: #E0C68F;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .22em;
+      line-height: 1.8;
+      text-transform: uppercase;
+    }
+
+    .contact-page .contact-hero h1 {
+      margin: 0;
+      color: #FBF8F0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(36px, 5vw, 53px);
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .contact-page .contact-hero p {
+      max-width: 540px;
+      margin: 17px auto 0;
+      color: #E8E3D9;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .contact-page .hero-gold-ornament {
+      display: block;
+      margin-top: 20px;
+      color: #DCC28B;
+      font-size: 17px;
+    }
+
+    .contact-page .contact-content {
+      padding: 54px 22px 68px;
+    }
+
+    .contact-page .section-inner {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .contact-page .pastors-section,
+    .contact-page .location-section {
+      width: 100%;
+      text-align: center;
+    }
+
+    .contact-page .pastors-section {
+      margin: 0 auto 58px;
+    }
+
+    .contact-page .contact-content h2 {
+      margin: 0;
+      color: var(--contact-navy);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(29px, 3vw, 37px);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .contact-page .section-description {
+      max-width: 580px;
+      margin: 12px auto 0;
+      color: var(--contact-text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .contact-page .contact-gold-rule {
+      width: 62px;
+      height: 2px;
+      margin: 17px auto 20px;
+      background: linear-gradient(
+        90deg,
+        #98733C,
+        #E7D4A5,
+        #C7A86D
+      );
+    }
+
+    /* ========================================
+       PASTOR CARDS
+       Keep original rectangular card shape.
+       Names are real visible text, not alt text.
+    ======================================== */
+
+    .contact-page .pastors-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 190px));
+      justify-content: center;
+      align-items: start;
+      gap: 20px;
+      width: 100%;
+      margin: 25px auto 0;
+    }
+
+    .contact-page .pastor-card {
+      display: block;
+      min-width: 0;
+      overflow: hidden;
+      padding: 0;
+      border: 1px solid rgba(199, 168, 109, .8);
+      border-radius: 6px;
+      background: #FFFDF8;
+      box-shadow: 0 6px 18px rgba(16, 42, 67, .07);
+      text-align: center;
+    }
+
+    .contact-page .pastor-photo-wrap {
+      display: block;
+      width: 100%;
+      height: 112px;
+      margin: 0;
+      overflow: hidden;
+      border: 0;
+      border-bottom: 2px solid var(--contact-gold);
+      border-radius: 0;
+      background: #F0E8D7;
+    }
+
+    .contact-page .pastor-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .contact-page .pastor-info {
+      display: block;
+      width: 100%;
+      margin: 0;
+      padding: 13px 8px 15px;
+      text-align: center;
+    }
+
+    .contact-page .pastor-name {
+      display: block;
+      margin: 0;
+      color: var(--contact-navy);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-page .pastor-role {
+      display: block;
+      margin: 6px 0 0;
+      color: var(--contact-gold-dark);
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    /* ========================================
+       AD HOC COMMITTEE
+    ======================================== */
+
+    .contact-page .members-section {
+      width: 100%;
+      margin: 0 auto 58px;
+      padding: 36px 28px 38px;
+      border: 1px solid rgba(199, 168, 109, .75);
+      border-radius: 8px;
+      background: linear-gradient(
+        145deg,
+        #FFFDF8,
+        #F5EEDF
+      );
+      box-shadow: 0 10px 28px rgba(16, 42, 67, .05);
+    }
+
+    .contact-page .members-heading {
+      text-align: center;
+    }
+
+    .contact-page .members-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px 18px;
+      margin-top: 28px;
+    }
+
+    .contact-page .member-card {
+      display: block;
+      min-width: 0;
+      padding: 16px 10px 18px;
+      border: 1px solid rgba(199, 168, 109, .5);
+      border-radius: 6px;
+      background: rgba(255, 253, 248, .9);
+      text-align: center;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .contact-page .member-card:hover {
+      border-color: var(--contact-gold);
+      box-shadow: 0 6px 16px rgba(16, 42, 67, .07);
+    }
+
+    .contact-page .member-photo-wrap {
+      width: 82px;
+      height: 96px;
+      margin: 0 auto 13px;
+      overflow: hidden;
+      border: 2px solid var(--contact-gold);
+      border-radius: 3px;
+      background: #F0E8D7;
+    }
+
+    .contact-page .member-photo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .contact-page .member-name {
+      margin: 0;
+      color: var(--contact-navy);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-page .members-note {
+      margin: 27px 0 0;
+      color: var(--contact-gold-dark);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 18px;
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* ========================================
+       CHURCH LOCATION & MAP
+    ======================================== */
+
+    .contact-page .location-section {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .contact-page .location-card {
+      overflow: hidden;
+      margin-top: 27px;
+      border: 1px solid rgba(199, 168, 109, .8);
+      border-radius: 8px;
+      background: var(--contact-cream);
+      box-shadow: 0 12px 32px rgba(16, 42, 67, .08);
+    }
+
+    .contact-page .location-details {
+      padding: 27px 22px 30px;
+      text-align: center;
+    }
+
+    .contact-page .location-icon {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--contact-gold-dark);
+      font-size: 20px;
+    }
+
+    .contact-page .location-details h3 {
+      margin: 0;
+      color: var(--contact-navy);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .contact-page .location-details p {
+      margin: 12px 0 0;
+      color: var(--contact-text);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .contact-page .gold-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 19px;
+      padding: 11px 17px;
+      border: 1px solid var(--contact-gold);
+      border-radius: 3px;
+      background: var(--contact-navy);
+      color: #F5EEDF;
+      font-family: "Inter", Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .contact-page .gold-button:hover {
+      background: var(--contact-gold);
+      color: var(--contact-navy-dark);
+    }
+
+    .contact-page .location-map {
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      border-top: 1px solid rgba(199, 168, 109, .8);
+      background: #F5EEDF;
+    }
+
+    .contact-page .location-map iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ========================================
+       RESPONSIVE LAYOUT
+    ======================================== */
+
+    @media (max-width: 800px) {
+      .contact-page .members-section {
+        padding: 30px 18px;
+      }
+
+      .contact-page .members-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .contact-page .contact-hero {
+        padding: 48px 20px 44px;
+      }
+
+      .contact-page .contact-content {
+        padding: 40px 16px 48px;
+      }
+
+      .contact-page .pastors-section,
+      .contact-page .members-section {
+        margin-bottom: 40px;
+      }
+
+      .contact-page .pastors-grid {
+        grid-template-columns: repeat(2, minmax(0, 160px));
+        gap: 12px;
+      }
+
+      .contact-page .pastor-photo-wrap {
+        height: 105px;
+      }
+
+      .contact-page .pastor-info {
+        padding: 12px 6px 14px;
+      }
+
+      .contact-page .pastor-name {
+        font-size: 18px;
+      }
+
+      .contact-page .pastor-role {
+        font-size: 8px;
+      }
+
+      .contact-page .members-section {
+        padding: 27px 12px;
+      }
+
+      .contact-page .members-grid {
+        gap: 13px;
+      }
+
+      .contact-page .member-card {
+        padding: 13px 7px 15px;
+      }
+
+      .contact-page .member-photo-wrap {
+        width: 76px;
+        height: 90px;
+      }
+
+      .contact-page .member-name {
+        font-size: 17px;
+      }
+
+      .contact-page .location-map {
+        height: 270px;
+      }
+
+      .contact-page .location-details {
+        padding: 24px 15px 27px;
+      }
+
+      .contact-page .location-details h3 {
+        font-size: 23px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .contact-page .pastors-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .contact-page .pastor-name {
+        font-size: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .contact-page .gold-button,
+      .contact-page .member-card {
+        transition: none;
+      }
+    }
+
+    
+/* CENTRE PASTORS AND AD HOC COMMITTEE */
+
+.contact-page .pastors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 190px);
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  width: 100%;
+  margin: 25px auto 0;
+}
+
+.contact-page .members-section {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-page .members-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: center;
+  align-items: start;
+  gap: 22px 18px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-page .member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-page .member-photo-wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-page .member-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .contact-page .members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-page .pastors-grid {
+    grid-template-columns: repeat(2, minmax(0, 160px));
+    gap: 12px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="nav">
+
+      <a class="brand" href="index.html">
+        <div class="brand-mark">
+          <img
+            src="assets/churchlogo.jpg"
+            alt="Divine Grace Lutheran Church Logo">
+        </div>
+
+        <div class="brand-name">
+          <strong>DIVINE GRACE</strong>
+          <span>LUTHERAN CHURCH</span>
+        </div>
+      </a>
+
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="worship.html">Worship</a>
+        <a href="events.html">Events</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="prayer.html">Prayer</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="contact-page">
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+      
+        <span class="gold-eyebrow">WE WELCOME YOU</span>
+
+        <h1>Come Worship With Us</h1>
+
+        <p>
+          We would be glad to welcome you to Divine Grace Lutheran Church.
+          Join us for worship, prayer and fellowship.
+        </p>
+
+        <span class="hero-gold-ornament" aria-hidden="true">✦</span>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="contact-content">
+      <div class="section-inner">
+
+        <!-- 1. PASTORS -->
+        <section class="pastors-section">
+          <span class="gold-eyebrow">OUR SHEPHERDS</span>
+
+          <h2>Meet Our Pastors</h2>
+
+          <div class="contact-gold-rule" aria-hidden="true"></div>
+
+          <p class="section-description">
+            Serving our congregation with faith, care and grace.
+          </p>
+
+          <div class="pastors-grid">
+
+            <article class="pastor-card">
+              <div class="pastor-photo-wrap">
+                <img
+                  class="pastor-photo"
+                  src="assets/pastor-ashok.jpg"
+                  alt="Portrait of Rev. N. Ashok"
+                  loading="lazy">
+              </div>
+
+              <div class="pastor-info">
+                <h3 class="pastor-name">Rev. N. Ashok</h3>
+                <span class="pastor-role">Parish Pastor</span>
+                 <span class="pastor-role">00000000000</span>
+              </div>
+            </article>
+
+            <article class="pastor-card">
+              <div class="pastor-photo-wrap">
+                <img
+                  class="pastor-photo"
+                  src="assets/pastor-kiran.jpg"
+                  alt="Portrait of Rev. Dr. Kiran"
+                  loading="lazy">
+              </div>
+
+              <div class="pastor-info">
+                <h3 class="pastor-name">Rev. Dr. Kiran</h3>
+                <span class="pastor-role">Associate Pastor</span>
+                <span class="pastor-role">00000000000</span>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- 2. AD HOC COMMITTEE -->
+        <section class="members-section">
+          <div class="members-heading">
+            <span class="gold-eyebrow">SERVING TOGETHER</span>
+
+            <h2>Our Ad Hoc Committee</h2>
+
+            <div class="contact-gold-rule" aria-hidden="true"></div>
+
+            <p class="section-description">
+              With grateful hearts, we serve our church and community together.
+            </p>
+          </div>
+
+          <div class="members-grid">
+
+            <article class="member-card">
+              
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+               
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+              
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+               <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+              
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+              
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+              
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+            <article class="member-card">
+              
+              <h3 class="member-name">Member Name</h3>
+              <span class="pastor-role">00000000000</span>
+            </article>
+
+          </div>
+
+          <p class="members-note">
+            Many members, one church, serving together in grace.
+          </p>
+        </section>
+
+        <!-- 3. CHURCH LOCATION -->
+        <section class="location-section">
+          <span class="gold-eyebrow"></span>
+
+          <h2>Location</h2>
+
+          <div class="contact-gold-rule" aria-hidden="true"></div>
+
+         
+
+          <div class="location-card">
+
+            <div class="location-details">
+              <span class="location-icon" aria-hidden="true">✦</span>
+
+              <h3>Divine Grace Lutheran Church</h3>
+
+              <p>
+                Kapra Parish, Bhavani Nagar,<br>
+                ECIL (Post), Hyderabad – 500 062
+              </p>
+
+              <a
+                class="gold-button"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Divine+Grace+Lutheran+Church%2C+Bhavani+Nagar%2C+Kapra%2C+Hyderabad"
+                target="_blank"
+                rel="noopener noreferrer">
+                Get Directions <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="location-map">
+              <iframe
+                src="https://maps.google.com/maps?q=Divine%20Grace%20Lutheran%20Church%2C%20Bhavani%20Nagar%2C%20Kapra%2C%20Hyderabad&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                title="Map showing Divine Grace Lutheran Church, Bhavani Nagar, Kapra, Hyderabad"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+
+      <div>
+        <h3>Divine Grace Lutheran Church</h3>
+        <p>
+          Andhra Evangelical Lutheran Church<br>
+          Kapra Parish · Bhavani Nagar<br>
+          ECIL (Post), Hyderabad – 500 062
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <p>
+          <a href="index.html">Home</a><br>
+          <a href="about.html">About Us</a><br>
+          <a href="worship.html">Worship</a><br>
+          <a href="events.html">Events</a><br>
+          <a href="sermons.html">Sermons</a>
+        </p>
+      </div>
+
+      <div>
+        <h3>Connect</h3>
+        <p>
+          <a href="prayer.html">Prayer Requests</a><br>
+          <a href="contact.html">Contact Us</a>
+        </p>
+        <p>Sunday worship · Bible study · Fellowship</p>
+        <p>All are welcome.</p>
+      </div>
+
+    </div>
+
+     <div class="copyright">
+        © 2026 Divine Grace Lutheran Church · Bhavani Nagar, Hyderabad · Built with grace
+      </div>
+     <div class="designer-credit-right">
+  Website Design by <a>Rishika Daisy</a>
+</div>
+  </footer>
+
+  <script src="site.js"></script>
+
+</body>
+</html>

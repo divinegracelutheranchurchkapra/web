@@ -1,0 +1,570 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Worship | Divine Grace Lutheran Church</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* =====================================
+       WORSHIP PAGE — TARGETED REFINEMENTS
+       ===================================== */
+
+    /* Heading: elegant, upright typography */
+
+    .worship-intro h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: normal !important;
+      font-weight: 400 !important;
+      line-height: 1.3;
+      letter-spacing: 0.01em;
+    }
+
+    .worship-intro h2 span {
+      font-style: normal !important;
+      font-weight: 400 !important;
+      color: #A78345;
+    }
+
+    .worship-intro-copy p {
+      font-style: normal !important;
+    }
+
+    /* Service times: straight and decorative */
+
+    .worship-time {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: normal !important;
+      font-weight: 500 !important;
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      color: #A78345;
+    }
+
+    .worship-day {
+      font-style: normal !important;
+      letter-spacing: 0.12em;
+    }
+
+    /* Reduce the empty space before Sunday cards */
+
+    .worship-intro-section {
+      padding-top: 40px !important;
+      padding-bottom: 24px !important;
+    }
+
+    .worship-intro {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      row-gap: 18px;
+    }
+
+    .worship-intro-copy {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    .worship-intro-copy p:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .worship-section-rule {
+      margin-top: 20px !important;
+      margin-bottom: 22px !important;
+    }
+
+    .worship-schedule-grid {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    /* =====================================
+       SCRIPTURE — SMALL, QUIET & CENTRED
+       Remove the dark background block
+       ===================================== */
+
+    .worship-scripture {
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      outline: none !important;
+
+      padding: 22px 20px 26px !important;
+      margin: 0 auto !important;
+      text-align: center;
+    }
+
+    .worship-scripture-inner {
+      max-width: 620px;
+      width: 100%;
+      margin: 0 auto !important;
+      padding: 0 !important;
+
+      background: transparent !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      border: none !important;
+      box-shadow: none !important;
+
+      text-align: center;
+    }
+
+    .worship-scripture .worship-cross {
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      line-height: 1.5;
+      color: #A78345 !important;
+      margin: 0 auto 8px !important;
+    }
+
+    .worship-scripture p {
+      max-width: 540px;
+      margin: 0 auto 7px !important;
+      padding: 0 !important;
+
+      font-family: Georgia, "Times New Roman", serif !important;
+      font-size: 12px !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      line-height: 1.9 !important;
+      letter-spacing: 0.015em;
+
+      color: #8B795F !important;
+      text-align: center !important;
+    }
+
+    .worship-scripture span:not(.worship-cross) {
+      display: block;
+
+      font-family: Arial, sans-serif !important;
+      font-size: 9px !important;
+      font-weight: 400 !important;
+      font-style: normal !important;
+      letter-spacing: 0.18em;
+
+      color: #A78345 !important;
+      text-align: center !important;
+    }
+
+    /* Mobile refinements */
+
+    @media (max-width: 600px) {
+
+      .worship-intro-section {
+        padding-top: 28px !important;
+        padding-bottom: 18px !important;
+      }
+
+      .worship-intro {
+        row-gap: 12px;
+      }
+
+      .worship-intro h2 {
+        font-size: clamp(27px, 7vw, 34px);
+        line-height: 1.35;
+      }
+
+      .worship-time {
+        font-size: 13px;
+        letter-spacing: 0.045em;
+      }
+
+      .worship-section-rule {
+        margin-top: 16px !important;
+        margin-bottom: 18px !important;
+      }
+
+      .worship-scripture {
+        padding: 18px 18px 22px !important;
+      }
+
+      .worship-scripture p {
+        font-size: 11px !important;
+        line-height: 1.8 !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <nav class="nav">
+
+      <a class="brand" href="index.html">
+
+        <div class="brand-mark">
+          <img
+            src="assets/churchlogo.jpg"
+            alt="Divine Grace Lutheran Church">
+        </div>
+
+        <div class="brand-name">
+          <strong>DIVINE GRACE</strong>
+          <span>LUTHERAN CHURCH</span>
+        </div>
+
+      </a>
+
+      <div class="navlinks">
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="worship.html" class="active">Worship</a>
+        <a href="events.html">Events</a>
+        <a href="sermons.html">Sermons</a>
+        <a href="prayer.html">Prayer</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO — UNCHANGED -->
+
+  <section class="page-hero worship-page-hero">
+
+    <div class="worship-hero-decoration"></div>
+
+    <div class="worship-hero-content">
+
+      <div class="eyebrow">
+        WORSHIP · PRAYER · FELLOWSHIP
+      </div>
+
+      <h1>Worship With Us</h1>
+
+      <p>
+        Join us in worship, Scripture, prayer and fellowship
+        throughout the week.
+      </p>
+
+      <div class="worship-gold-rule"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CHURCH SCHEDULE -->
+
+  <section class="section worship-intro-section">
+
+    <div class="section-inner">
+
+      <div class="worship-intro">
+
+        <div>
+
+          <div class="worship-dark-eyebrow">
+            COME &amp; WORSHIP
+          </div>
+
+          <h2>
+            Church Schedule
+            <span>&amp; Timings</span>
+          </h2>
+
+        </div>
+
+        <div class="worship-intro-copy">
+
+          <p>
+            Set aside a moment to worship, learn, pray and
+            share life with the church family.
+          </p>
+
+          <p>
+            From Sunday worship to Bible study and fellowship
+            throughout the week, there is always an opportunity
+            to gather together in faith.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- GOLD DIVIDER -->
+
+      <div class="worship-section-rule">
+        <span></span>
+      </div>
+
+
+      <!-- ALL NINE SCHEDULE CARDS — PRESERVED -->
+
+      <div class="worship-schedule-grid">
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">SUNDAY</span>
+            <span class="worship-time">8:00 AM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>English Service</h3>
+
+          <p>
+            A morning service of worship, Word and fellowship.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">SUNDAY</span>
+            <span class="worship-time">10:00 AM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Telugu Service</h3>
+
+          <p>
+            Worship and community in Telugu.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">SUNDAY</span>
+            <span class="worship-time">10:00 AM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Sunday School</h3>
+
+          <p>
+            Faith formation and learning for children.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">3RD SUNDAY</span>
+            <span class="worship-time">12:00 PM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Sunday Meeting</h3>
+
+          <p>
+            A time for the wider church family to gather.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">3RD SUNDAY</span>
+            <span class="worship-time">12:00 PM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Women's Sunday</h3>
+
+          <p>
+            Fellowship, encouragement and shared ministry.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">WEDNESDAY</span>
+            <span class="worship-time">10:30 AM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Senior Citizens Fellowship</h3>
+
+          <p>
+            A welcoming space for prayer and fellowship.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">FRIDAY</span>
+            <span class="worship-time">6:30 PM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Bible Study</h3>
+
+          <p>
+            Come explore Scripture together.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">SATURDAY</span>
+            <span class="worship-time">6:30 PM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Choir Practice</h3>
+
+          <p>
+            Preparing our voices to serve in worship.
+          </p>
+
+        </article>
+
+
+        <article class="worship-card">
+
+          <div class="worship-card-top">
+            <span class="worship-day">3RD SUNDAY</span>
+            <span class="worship-time">12:00 PM</span>
+          </div>
+
+          <div class="worship-card-line"></div>
+
+          <h3>Youth Meet</h3>
+
+          <p>
+            A time for young people to gather, connect,
+            grow in faith and fellowship.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DELICATE SCRIPTURE — NO COLOURED BLOCK -->
+
+  <section class="worship-scripture">
+
+    <div class="worship-scripture-inner">
+
+      <div class="worship-cross">✦</div>
+
+      <p>
+        “I rejoiced with those who said to me,
+        'Let us go to the house of the LORD.' ”
+      </p>
+
+      <span>PSALM 122:1 · NIV</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER — PRESERVED -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>Divine Grace Lutheran Church</h3>
+
+        <p>
+          A place of worship, fellowship, faith and prayer.
+        </p>
+
+        <p class="footer-welcome">
+          You are welcome here.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Quick Links</h3>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="worship.html">Worship</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+
+      </div>
+
+
+      <div>
+
+        <h3>Connect</h3>
+
+        <ul>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="prayer.html">Prayer</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+
+
+    </div>
+
+
+   <div class="copyright">
+        © 2026 Divine Grace Lutheran Church · Bhavani Nagar, Hyderabad · Built with grace
+      </div>
+    
+ <div class="designer-credit-right">
+  Website Design by <a>Rishika Daisy</a>
+</div>
+
+
+  </footer>
+
+</body>
+
+</html>
